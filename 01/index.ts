@@ -1,21 +1,19 @@
-interface User {
+interface Owner {
   name: string;
   pets: string[];
 }
 
-const searchPetOwner = (usersList: User[], targetPet: string) => {
+const searchPetOwner = (usersList: Owner[], targetPet: string): string => {
   const userfounded = usersList.filter((user) => user.pets.includes(targetPet));
 
   if (userfounded.length !== 0) {
-    return console.log(
-      `O dono(a) do(a) ${targetPet} é o(a) ${userfounded[0].name}`
-    );
+    return `O dono(a) do(a) ${targetPet} é o(a) ${userfounded[0].name}`;
   }
 
-  return console.log(`Que pena ${targetPet}, não encontramos seu dono(a)`);
+  return `Que pena ${targetPet}, não encontramos seu dono(a)`;
 };
 
-const users: User[] = [
+const users: Owner[] = [
   {
     name: "João",
     pets: ["Max"],
@@ -40,4 +38,4 @@ const users: User[] = [
 
 const petToFind = "Lessie";
 
-searchPetOwner(users, petToFind);
+console.log(searchPetOwner(users, petToFind));
