@@ -1,6 +1,6 @@
 const separateWord = (word: string): string => {
-  const letters = word.split("");
-  const spelledLetters = letters.join("-");
+  const spelledLetters = word.split("").join("-");
+
   return spelledLetters;
 };
 
